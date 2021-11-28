@@ -1,0 +1,44 @@
+
+
+<mat-card>
+    <mat-card-content>
+      <form #newHeroForm="ngForm" (ngSubmit) = "createHero()" autocomplete="off">
+
+        <mat-error *ngIf="validationError.length>0">
+          <ul>
+            <li *ngFor="let err of validationError"> {{err}}</li>
+          </ul>
+        </mat-error>
+
+        <mat-form-field class="full-width-input">
+          <input matInput placeholder="Name" 
+          name="name" [(ngModel)]="hero.name" required>
+        </mat-form-field>
+
+        <mat-form-field  >
+                <mat-label>Starting Power</mat-label>
+                <input matInput type="number"  min="1" name="startingPower" [(ngModel)]="hero.startingPower">
+        </mat-form-field>
+
+        <mat-form-field class="full-width-input">
+            <input matInput placeholder="Suit Color" 
+            name="suit" [(ngModel)]="hero.suit" required>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label> Ability </mat-label>
+            <mat-select [(value)]="ability" required>
+              <mat-option value="attacker">Attacker</mat-option>
+              <mat-option value="defender">Defender</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+
+
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+
+

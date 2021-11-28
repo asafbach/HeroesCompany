@@ -1,0 +1,42 @@
+
+<h1 class='home-header'>Welcome please login or sign up to continue </h1>
+
+<mat-card>
+    <mat-card-content>
+      <form #loginForm="ngForm" (ngSubmit) = "submitForm()" autocomplete="off">
+        <!-- <h2>Hello</h2> -->
+
+        <mat-button-toggle-group name="toggle-formType" [(ngModel)]="formType">
+          <mat-button-toggle value="r">Sign Up</mat-button-toggle>
+          <mat-button-toggle value="l">Login</mat-button-toggle>
+        </mat-button-toggle-group>
+        <mat-error *ngIf="validationError.length>0">
+          <ul>
+            <li *ngFor="let err of validationError"> {{err}}</li>
+          </ul>
+        </mat-error>
+        <mat-form-field *ngIf="formType === 'r'" class="full-width-input">
+          <input matInput placeholder="Full Name" 
+          name="name" [(ngModel)]="model.username" required>
+          <mat-error>
+            Please provide a valid name 
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+          <input matInput placeholder="Email" 
+          name="email" [(ngModel)]="model.email" required>
+          <mat-error>
+            Please provide a valid email address
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+          <input matInput type="password" placeholder="Password" 
+          name="password" [(ngModel)]="model.password" required>
+          <mat-error>
+            Please provide a valid password
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+      </form>
+    </mat-card-content>
+  </mat-card>

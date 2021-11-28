@@ -1,0 +1,26 @@
+.div-logout{
+    display: flex;
+    width:100%;
+    justify-content: flex-end;
+    cursor: pointer;
+    
+}
+.div-logout .logout-btn{
+    color: black;
+    margin-left: 50px;
+}
+
+.div-logout span{
+    margin-right: 20px;
+    padding: 5px;
+    color: lightgray;
+}
+.div-logout span:hover{
+    border: solid 3px black;
+    border-radius: 5px; 
+}
+
+.div-logout .active{
+    color: white;
+}
+

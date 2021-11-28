@@ -1,0 +1,9 @@
+
+<div *ngIf="(accountService.currentUser$ | async) === null">
+    <app-login></app-login>
+</div>
+
+<div *ngIf="accountService.currentUser$ | async">
+    <app-heroes></app-heroes>
+</div>
+

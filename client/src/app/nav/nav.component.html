@@ -1,0 +1,22 @@
+<mat-toolbar color="primary" class="expanded-toolbar">
+
+    <span  style="cursor: pointer;" routerLink="/">Heroes Company</span>
+    <span class="example-spacer"></span>
+    <div class="div-logout" *ngIf="accountService.currentUser$ | async" >
+          <span routerLink="/new-hero" routerLinkActive="active">
+            New Hero
+          </span>
+          <span routerLink="/heroes" routerLinkActive="active">
+            My Heroes
+          </span>
+          <span routerLink="/allHeroes" routerLinkActive="active">
+            All Heroes
+          </span>
+          <span class="logout-btn" (click)="logout()">
+            Logout
+          </span>
+    </div>
+
+  </mat-toolbar>
+
+

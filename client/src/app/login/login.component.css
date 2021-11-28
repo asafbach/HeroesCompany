@@ -1,0 +1,19 @@
+mat-card {
+    max-width: 400px;
+    margin: 2em auto;
+    text-align: center;
+  }
+  
+  mat-form-field {
+    display: block;
+  }
+
+  mat-button-toggle{
+    font-weight: bold;
+  }
+
+  .home-header{
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+}

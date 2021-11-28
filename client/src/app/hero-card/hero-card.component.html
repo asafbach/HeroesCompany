@@ -1,0 +1,24 @@
+
+<div class="row" style="margin: 15px;">
+  <div *ngFor="let hero of heroes">
+    <div  class="column">
+      <div class="card" style="height: 250px;">
+        <h3>Name : {{hero.name}}</h3>
+        <p> ability: {{hero.ability}}</p>
+        <p> suit color: {{hero.suit}}</p>
+        <p> starting power: {{hero.startingPower.toFixed(2)}}</p>
+        <p> current power: {{hero.currentPower.toFixed(2)}}</p>
+        <p> date when hero start train: {{hero.startTrainingDate | date}}</p>
+        <p *ngIf="userId === hero.trainerId">
+          <button (click)="trainHero(hero.id)" style="color: green;"> train</button>
+          <button (click)="deleteHero(hero.id)" style="color: red;margin-left: 15px;">delete</button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
