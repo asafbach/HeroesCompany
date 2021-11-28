@@ -23,21 +23,25 @@ export class LoginComponent implements OnInit {
       this.accountService.register(this.model).subscribe({
         next : (res) => console.log(res),
         error : (err) => {
-          if(err.error){
-            this.validationError = [];
-            this.validationError.push(err.error);
-          }
-          else
-            this.validationError = err;
+          this.addValidationError(err);
         }
       });
     }
     else{
       this.accountService.login(this.model).subscribe({
         next : (res) => console.log(res),
-        error : (err) => {this.validationError = err;}
+        error : (err) => {this.addValidationError(err);}
       });
     }
+  }
+
+  addValidationError(err:any){
+    if(err.error){
+      this.validationError = [];
+      this.validationError.push(err.error);
+    }
+    else
+      this.validationError = err;
   }
 }
 
